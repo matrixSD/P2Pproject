@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+  <name>מפות לאיטגרציה 1</name>
+  <gx:CascadingStyle kml:id="__managed_style_2DAD87B68F16F10B47FD">
+    <Style>
+      <IconStyle>
+        <scale>1.2</scale>
+        <Icon>
+          <href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+        </Icon>
+        <hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+      </LabelStyle>
+      <LineStyle>
+        <color>ff2dc0fb</color>
+        <width>4.8</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>40ffffff</color>
+      </PolyStyle>
+      <BalloonStyle>
+        <displayMode>hide</displayMode>
+      </BalloonStyle>
+    </Style>
+  </gx:CascadingStyle>
+  <gx:CascadingStyle kml:id="__managed_style_1EFF68A9C316F10B47FD">
+    <Style>
+      <IconStyle>
+        <Icon>
+          <href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+        </Icon>
+        <hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+      </LabelStyle>
+      <LineStyle>
+        <color>ff2dc0fb</color>
+        <width>3.2</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>40ffffff</color>
+      </PolyStyle>
+      <BalloonStyle>
+        <displayMode>hide</displayMode>
+      </BalloonStyle>
+    </Style>
+  </gx:CascadingStyle>
+  <StyleMap id="__managed_style_03817E988F16F10B47FD">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#__managed_style_1EFF68A9C316F10B47FD</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#__managed_style_2DAD87B68F16F10B47FD</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Placemark id="0C0EB1BE0C16F10B47FD">
+    <name>ג&apos;ונגל מזרח</name>
+    <LookAt>
+      <longitude>35.58644568026617</longitude>
+      <latitude>32.6454856061015</latitude>
+      <altitude>-231.2725903313523</altitude>
+      <heading>0</heading>
+      <tilt>0</tilt>
+      <gx:fovy>35</gx:fovy>
+      <range>1190.574408008979</range>
+      <altitudeMode>absolute</altitudeMode>
+    </LookAt>
+    <styleUrl>#__managed_style_03817E988F16F10B47FD</styleUrl>
+    <Polygon>
+      <outerBoundaryIs>
+        <LinearRing>
+          <coordinates>
+            35.58708907413101,32.64734127299098,-228.578161759938 35.58827724216226,32.64460489559187,-233.1837217511786 35.58873995753535,32.64484028169066,-233.1824774985944 35.58938455621197,32.64508395348908,-232.6620142827215 35.5901975491321,32.64535999354442,-230.7383864594617 35.59053817813866,32.64548148603301,-231.8774371247258 35.59083145282186,32.64581423952094,-233.0662606307019 35.59103053962602,32.64663313378914,-232.186053112947 35.59097681013684,32.64743364572413,-230.7096853611864 35.59067861533443,32.64804928068619,-230.7097892791357 35.59039001128179,32.64826799482805,-230.7090999846304 35.58996496767119,32.64835568043485,-230.1171046438527 35.58972175870826,32.64822379367783,-229.0973098168051 35.58922560282824,32.64802402128561,-226.4633134483458 35.58855234534537,32.64790845922882,-225.2058319048594 35.58802700999711,32.64779753779194,-226.2085076804874 35.58708907413101,32.64734127299098,-228.578161759938 
+          </coordinates>
+        </LinearRing>
+      </outerBoundaryIs>
+    </Polygon>
+  </Placemark>
+
+</Document>
+</kml>

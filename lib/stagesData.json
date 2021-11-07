@@ -1,0 +1,408 @@
+ 
+{
+  "Name": "Bannana",
+  "icon":"bannana.png",
+  "Stages": {
+
+    "establishment": {
+      "duration_start": 25,
+      "duration_end": 45,
+      "day_range_min": 13,
+      "day_range_max": 40,
+      "day_temperature_days": 30,
+      "day_temperature_degree": 28,
+      "day_temperature_reduce": 0.125,
+      "day_temperature_increase": 0.3,
+      "night_range_min": 8,
+      "night_range_max": 0,
+      "night_temperature_days": 30,
+      "night_temperature_NoInfluence": 26,
+      "night_temperature_influence": [
+        [
+          26,
+          26,
+          0,
+          "NoInfluence",
+          "NoInfluence"
+        ],
+        [
+          26,
+          0,
+          0.08,
+          "lower",
+          "extend"
+        ],
+        [
+          26,
+          0,
+          0.04,
+          "higher",
+          "short"
+        ]
+      ],
+      "humid_days": 30,
+      "humid_NoInfluence": 80,
+      "humid_range_min": 20,
+      "humid_range_max": null,
+      "humid_influence": [
+        [
+          80,
+          80,
+          0
+        ],
+        [
+          80,
+          65,
+          0.008
+        ],
+        [
+          65,
+          50,
+          0.016
+        ],
+        [
+          50,
+          20,
+          0.035
+        ]
+      ],
+      "daylength_range_min": 2,
+      "daylength_range_max": 20,
+      "daylength_influence": 20,
+      "daylength_extend": 0.27,
+      "wind_min": 15,
+      "wind_extend": 0.05
+    },
+
+
+    "sucker_selection": {
+      "duration_start": 60,
+      "duration_end": 180,
+      "day_range_min": 12,
+      "day_range_max": 42,
+      "day_temperature_days": 180,
+      "day_temperature_degree": 12,
+      "day_temperature_reduce": 1.2,
+      "night_range_min": 6,
+      "night_range_max": 0,
+      "night_temperature_days": 30,
+      "night_temperature_NoInfluence": 26,
+      "night_temperature_influence": [
+        [
+          20,
+          20,
+          0,
+          "",
+          ""
+        ],
+        [
+          20,
+          0,
+          0.51,
+          "lower",
+          "extend"
+        ],
+        [
+          12,
+          0,
+          1.31,
+          "lower",
+          "extend"
+        ]
+      ],
+      "humid_days": 30,
+      "humid_NoInfluence": 80,
+      "humid_range_min": 20,
+      "humid_range_max": null,
+      "humid_influence": [
+        [
+          80,
+          80,
+          0
+        ],
+        [
+          80,
+          65,
+          0.056
+        ],
+        [
+          65,
+          50,
+          0.112
+        ],
+        [
+          50,
+          20,
+          0.238
+        ]
+      ],
+      "daylength_range_min": 2,
+      "daylength_range_max": 20,
+      "daylength_influence": 20,
+      "daylength_extend": 1.67,
+      "wind_min": 15,
+      "wind_extend": 0.33
+    },
+
+    "growth": {
+      "duration_start": 60,
+      "duration_end": 90,
+      "day_range_min": 12,
+      "day_range_max": 42,
+      "day_temperature_days": 90,
+      "day_temperature_degree": 12,
+      "day_temperature_reduce": 0.3,
+      "night_range_min": 6,
+      "night_range_max": 0,
+      "night_temperature_days": 30,
+      "night_temperature_NoInfluence": 26,
+      "night_temperature_influence": [
+        [
+          26,
+          26,
+          0,
+          "NoInfluence",
+          "NoInfluence"
+        ],
+        [
+          26,
+          0,
+          0.08,
+          "lower",
+          "extend"
+        ],
+        [
+          26,
+          0,
+          0.04,
+          "higher",
+          "short"
+        ]
+      ],
+      "humid_days": 30,
+      "humid_NoInfluence": 80,
+      "humid_range_min": 20,
+      "humid_range_max": null,
+      "humid_influence": [
+        [
+          80,
+          80,
+          0
+        ],
+        [
+          80,
+          65,
+          0.014
+        ],
+        [
+          65,
+          50,
+          0.028
+        ],
+        [
+          50,
+          20,
+          0.06
+        ]
+      ],
+      "daylength_range_min": 2,
+      "daylength_range_max": 20,
+      "daylength_influence": 20,
+      "daylength_extend": 0.42,
+      "wind_min": 15,
+      "wind_extend": 0.08
+    },
+
+    "shooting": {
+      "duration_start": 15,
+      "duration_end": 30,
+      "day_range_min": 12,
+      "day_range_max": 42,
+      "day_temperature_days": 30,
+      "day_temperature_degree": 12,
+      "day_temperature_reduce": 0.15,
+      "night_range_min": 6,
+      "night_range_max": 0,
+      "night_temperature_days": 30,
+      "night_temperature_NoInfluence": 26,
+      "night_temperature_influence": [
+        [
+          26,
+          26,
+          0,
+          "NoInfluence",
+          "NoInfluence"
+        ],
+        [
+          26,
+          0,
+          0.08,
+          "lower",
+          "extend"
+        ],
+        [
+          26,
+          0,
+          0.04,
+          "higher",
+          "short"
+        ]
+      ],
+      "humid_days": 30,
+      "humid_NoInfluence": 65,
+      "humid_range_min": 20,
+      "humid_range_max": null,
+      "humid_influence": [
+        [
+          65,
+          65,
+          0
+        ],
+        [
+          65,
+          50,
+          0.014
+        ],
+        [
+          50,
+          20,
+          0.028
+        ]
+      ],
+      "daylength_range_min": 2,
+      "daylength_range_max": 20,
+      "daylength_influence": 20,
+      "daylength_extend": 0.21,
+      "wind_min": 15,
+      "wind_extend": 0.04
+    },
+
+    "hands_opening": {
+      "duration_start": 15,
+      "duration_end": 30,
+      "day_range_min": 12,
+      "day_range_max": 42,
+      "day_temperature_days": 30,
+      "day_temperature_degree": 12,
+      "day_temperature_reduce": 0.15,
+      "night_range_min": 6,
+      "night_range_max": 0,
+      "night_temperature_days": 30,
+      "night_temperature_NoInfluence": 26,
+      "night_temperature_influence": [
+        [
+          26,
+          26,
+          0,
+          "NoInfluence",
+          "NoInfluence"
+        ],
+        [
+          26,
+          0,
+          0.08,
+          "lower",
+          "extend"
+        ],
+        [
+          26,
+          0,
+          0.04,
+          "higher",
+          "short"
+        ]
+      ],
+      "humid_days": 30,
+      "humid_NoInfluence": 65,
+      "humid_range_min": 20,
+      "humid_range_max": null,
+      "humid_influence": [
+        [
+          65,
+          65,
+          0
+        ],
+        [
+          65,
+          50,
+          0.014
+        ],
+        [
+          50,
+          20,
+          0.028
+        ]
+      ],
+      "daylength_range_min": 2,
+      "daylength_range_max": 20,
+      "daylength_influence": 20,
+      "daylength_extend": 0.21,
+      "wind_min": 15,
+      "wind_extend": 0.04
+    },
+
+    "bunch_filling": {
+      "duration_start": 30,
+      "duration_end": 120,
+      "day_range_min": 12,
+      "day_range_max": 42,
+      "day_temperature_days": 120,
+      "day_temperature_degree": 12,
+      "day_temperature_reduce": 0.9,
+      "night_range_min": 6,
+      "night_range_max": 0,
+      "night_temperature_days": 30,
+      "night_temperature_NoInfluence": 26,
+      "night_temperature_influence": [
+        [
+          26,
+          26,
+          0,
+          "NoInfluence",
+          "NoInfluence"
+        ],
+        [
+          26,
+          0,
+          0.08,
+          "lower",
+          "extend"
+        ],
+        [
+          26,
+          0,
+          0.04,
+          "higher",
+          "short"
+        ]
+      ],
+      "humid_days": 30,
+      "humid_NoInfluence": 65,
+      "humid_range_min": 20,
+      "humid_range_max": null,
+      "humid_influence": [
+        [
+          65,
+          65,
+          0
+        ],
+        [
+          65,
+          50,
+          0.084
+        ],
+        [
+          50,
+          20,
+          0.17
+        ]
+      ],
+      "daylength_range_min": 2,
+      "daylength_range_max": 20,
+      "daylength_influence": 20,
+      "daylength_extend": 1.25,
+      "wind_min": 15,
+      "wind_extend": 0.25
+    }
+  }
+}

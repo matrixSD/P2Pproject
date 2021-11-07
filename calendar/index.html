@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>PHP Annual Leave Scheduling (JavaScript/HTML5 Frontend, MySQL Database)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="main.css" rel="stylesheet" type="text/css"/>
+  <!-- DayPilot library -->
+  <script src="js/daypilot/daypilot-all.min.js"></script>
+
+  <style type="text/css">
+    #dp .scheduler_default_rowheader_inner {
+      padding: 10px;
+    }
+
+    #dp .scheduler_default_timeheader_cell_inner,
+    #dp .scheduler_default_timeheader_float_inner {
+      padding: 10px;
+    }
+
+    #dp .scheduler_default_columnheader_cell_inner {
+      padding: 10px;
+    }
+
+    #dp .scheduler_default_event_inner {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1><a href='https://code.daypilot.org/97780/php-annual-leave-scheduling-javascript-html5-frontend-mysql'>PHP Annual Leave Scheduling (JavaScript/HTML5 Frontend, MySQL Database)</a></h1>
+  <div><a href="https://javascript.daypilot.org/">DayPilot for JavaScript</a> - HTML5 Calendar/Scheduling Components for JavaScript/Angular/React/Vue</div>
+</div>
+
+<div class="main">
+  <div id="dp"></div>
+</div>
+
+<script>
+  const dp = new DayPilot.Scheduler("dp", {
+    timeHeaders: [{"groupBy": "Month"}, {"groupBy": "Day", "format": "d"}],
+    rowHeaderColumns: [
+      {name: "Name", display: "name"},
+      {name: "Total"}
+    ],
+    scale: "CellDuration",
+    cellDuration: 720,
+    days: DayPilot.Date.today().daysInYear(),
+    startDate: DayPilot.Date.today().firstDayOfYear(),
+    eventHeight: 40,
+    headerHeight: 40,
+    cellWidth: 20,
+    allowEventOverlap: false,
+    onBeforeEventRender: (args) => {
+      args.data.moveVDisabled = true;
+      const duration = new DayPilot.Duration(args.data.start, args.data.end);
+      args.data.html = duration.totalDays() + " days";
+
+      args.data.backColor = "#d9ead3";
+      args.data.barColor = "#6aa84f";
+      args.data.barBackColor = args.data.barColor;
+    },
+    onBeforeRowHeaderRender: (args) => {
+      args.row.columns[1].html = "";
+      const totalDuration = args.row.events.totalDuration();
+
+      if (totalDuration.days() > 0) {
+        args.row.columns[1].html = totalDuration.totalDays() + " days";
+      }
+    },
+    onBeforeCellRender: (args) => {
+      const day = args.cell.start.getDayOfWeek();
+      if (day === 6 || day === 0) {
+        args.cell.disabled = true;
+      }
+    },
+    onTimeRangeSelected: async (args) => {
+
+      const form = [
+        { name: "Start", id: "start", dateFormat: "MMMM d, yyyy h:mm tt"},
+        { name: "End", id: "end", dateFormat: "MMMM d, yyyy h:mm tt"},
+        { name: "Employee", id: "resource", options: dp.resources },
+      ];
+
+      const data = {
+        start: args.start,
+        end: args.end,
+        resource: args.resource
+      };
+
+      const options = {
+        autoFocus: false
+      };
+
+      const modal = await DayPilot.Modal.form(form, data, options);
+      dp.clearSelection();
+      if (modal.canceled) {
+        return;
+      }
+
+      const {data: result} = await DayPilot.Http.post("backend_create.php", modal.result);
+      const id = result.id;
+      data.id = id;
+      dp.events.add(data);
+
+    },
+    eventDeleteHandling: "Update",
+    onEventDeleted: async (args) => {
+      await DayPilot.Http.post("backend_delete.php", {id: args.e.data.id});
+      dp.message("Deleted");
+    },
+    onEventMoved: async (args) => {
+
+      const data = {
+        id: args.e.data.id,
+        start: args.newStart,
+        end: args.newEnd,
+        resource: args.newResource
+      };
+      await DayPilot.Http.post("backend_move.php");
+      dp.message("Moved");
+
+    },
+    onEventResized: async (args) => {
+
+      const data = {
+        id: args.e.data.id,
+        start: args.newStart,
+        end: args.newEnd
+      };
+      await DayPilot.Http.post("backend_move.php", data);
+      dp.message("Resized");
+
+    },
+    scrollTo: DayPilot.Date.today()
+  });
+  dp.events.list = [];
+
+  dp.separators = [];
+  for (let i = 0; i < dp.days; i++) {
+    dp.separators.push({location: dp.startDate.addDays(i), color: "#ddd"});
+  }
+  dp.init();
+
+  dp.rows.load("backend_employees.php");
+  dp.events.load("backend_events.php");
+
+</script>
+
+</body>
+</html>
